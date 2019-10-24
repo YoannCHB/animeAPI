@@ -1,0 +1,38 @@
+body{
+    background-color: lightgray;
+}
+
+section{
+    display: inline-block;
+    flex-wrap: wrap;
+}
+
+article{
+    width: 100%;
+    margin: 0px;
+    height: auto;
+    overflow-x: hidden;
+}
+
+article img{
+    width: 100%;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header input{
+    flex: 1 80%;
+    height: 50px;
+    outline: none;
+}
+
+header button{
+    flex: 1 15%;
+    height: 50px;
+    border: none;
+    outline: none;
+    width: 15%;
+}

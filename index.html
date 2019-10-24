@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AnimeWiki | Retrouvez toutes les informations sur votre anime préféré !</title>
+    <script src="anime.js"></script>
+    <link rel="stylesheet" href="anime.css">
+</head>
+<body>
+    <header>
+        <input type="text" placeholder="Votre recherche...">
+        <button id="search">Rechercher</button>
+    </header>
+  <section>
+        <article>
+            <img src="" alt="Chargement...">
+            <h3 class="titre_anime"></h3>
+            <p class="synopsis"></p>
+            <p class="genre"></p>
+        </article>
+  </section>
+</body>
+<script>
+document.getElementById('search').onclick = function(){
+    let name=document.getElementsByTagName('input')[0].value;
+    animeAPI(name, function(res){
+        let mysection=document.getElementsByTagName('section')[0];
+        document.getElementsByTagName('img')[0].src=res.coverImage[0].large;
+        document.getElementsByTagName('h3')[0].innerHTML=res.anime_name[0].en;
+        document.getElementsByTagName('p')[0].innerHTML=res.anime_synopsis[0];
+    });
+}
+animeAPI('your name', function(res){
+    let mysection=document.getElementsByTagName('section')[0];
+    document.getElementsByTagName('img')[0].src=res.coverImage[0].large;
+    document.getElementsByTagName('h3')[0].innerHTML=res.anime_name[0].en;
+    document.getElementsByTagName('p')[0].innerHTML=res.anime_synopsis[0];
+    document.getElementsByTagName('p')[1].innerHTML="";
+    for(var i=0; i<res.anime_genre.length; i++){
+        let m=i < res.anime_genre.length-1 ? ", " : "";
+        document.getElementsByTagName('p')[1].innerHTML+=res.anime_genre[i]+m;
+    }
+});
+</script>
+</html>
