@@ -1,5 +1,6 @@
 # animeAPI
 animeAPI is a js file to get some information on any anime, source: https://kitsu.io
+-URL: https://yoannchb.github.io/animeAPI/index.html
 
 ```js
 //Simple function
