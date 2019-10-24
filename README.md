@@ -1,6 +1,5 @@
 # animeAPI
-animeAPI is a js file to get some information on any anime
-source: https://kitsu.io
+animeAPI is a js file to get some information on any anime, source: https://kitsu.io
 
 ```js
 //Simple function
